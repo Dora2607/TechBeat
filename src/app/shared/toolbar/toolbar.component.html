@@ -1,0 +1,94 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    (click)="sidenav.toggle()"
+    id="menuIcon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span id="menuTitle">
+    <div class="imgContainer">
+      <img src="../../../assets/img/logo1.jpg" alt="TechBeat Picture" />
+    </div>
+  </span>
+  <a mat-button routerLink="/" class="top-menu-item">Top Stories</a>
+  <a mat-button routerLink="/" class="top-menu-item">New Stories</a>
+  <a mat-button routerLink="/" class="top-menu-item">Best Stories</a>
+  <a mat-button routerLink="/" class="top-menu-item">Ask Stories</a>
+  <a mat-button routerLink="/" class="top-menu-item">Show Stories</a>
+  <a mat-button routerLink="/" class="top-menu-item">Job Stories</a>
+  <!-- <a mat-button routerLink="/contacts" class="top-menu-item"
+    ><mat-icon>people</mat-icon>Contacts</a
+  >
+  <a mat-button routerLink="/newcontact" class="top-menu-item"
+    ><mat-icon>person_add</mat-icon>New Contact</a
+  > -->
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="side">
+    <div class="side-nav-items">
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >Top Stories</a
+        >
+      </div>
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >New Stories</a
+        >
+      </div>
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >Best Stories</a
+        >
+      </div>
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >Ask Stories</a
+        >
+      </div>
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >Show Stories</a
+        >
+      </div>
+      <div>
+        <a
+          (click)="sidenav.close()"
+          mat-button
+          routerLink="/"
+          class="side-menu-item"
+          >Job Stories</a
+        >
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

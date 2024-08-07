@@ -1,0 +1,55 @@
+@import "../../../styles.scss";
+
+#menuTitle {
+  font-size: medium;
+  margin-right: 20px;
+}
+
+.mat-toolbar {
+  height: 60px;
+  background-color: $toolbar-color;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.mat-sidenav {
+  background-color:$sidenav-color;
+  width: 200px;
+}
+
+.side-nav-items {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.side-menu-item {
+  color: black !important;
+  margin-top: 20px;
+}
+
+.main-content {
+  margin: 20px;
+}
+
+@media (min-width: 900px) {
+  #menuIcon {
+    display: none;
+  }
+
+  .mat-sidenav {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-menu-item {
+    display: none;
+  }
+}
