@@ -1,0 +1,52 @@
+@import "../../../styles.scss";
+
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+
+  
+  h2 {
+    text-align: left;
+    margin-top: 1.5rem;
+    color: $btn-color;
+  }
+
+  .cardsContainer {
+    padding: 1rem;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2.5px solid $toolbar-color;
+    .actionContainer {
+      display: flex;
+      justify-content: flex-end;
+      .postDate {
+        display: flex;
+        font-size: 12px;
+        color: $btn-color;
+        padding-right: 3rem;
+        .clock {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .cardsContainer,
+  h2 {
+    width: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .cardsContainer,
+  h2 {
+    min-width: 300px;
+    max-width: 430px;
+    width: 90%;
+  }
+}

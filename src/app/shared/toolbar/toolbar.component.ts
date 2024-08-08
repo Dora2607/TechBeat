@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,13 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './toolbar.component.scss'
 })
 export class ToolbarComponent {
-  isSidenavOpen = false;
-
-  toggleSidenav() {
-    this.isSidenavOpen = !this.isSidenavOpen;
-  }
-
-  onSidenavToggle(isOpened: boolean) {
-    this.isSidenavOpen = isOpened;
-  }
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  overlay!: boolean;
 }

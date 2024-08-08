@@ -4,6 +4,7 @@
     (click)="sidenav.toggle()"
     id="menuIcon"
     aria-label="Example icon-button with menu icon"
+    [class.open]="sidenav.opened"
   >
     <mat-icon>menu</mat-icon>
   </button>
@@ -12,22 +13,24 @@
       <img src="../../../assets/img/logo1.jpg" alt="TechBeat Picture" />
     </div>
   </span>
-  <a mat-button routerLink="/" class="top-menu-item">Top Stories</a>
-  <a mat-button routerLink="/" class="top-menu-item">New Stories</a>
-  <a mat-button routerLink="/" class="top-menu-item">Best Stories</a>
-  <a mat-button routerLink="/" class="top-menu-item">Ask Stories</a>
-  <a mat-button routerLink="/" class="top-menu-item">Show Stories</a>
-  <a mat-button routerLink="/" class="top-menu-item">Job Stories</a>
-  <!-- <a mat-button routerLink="/contacts" class="top-menu-item"
-    ><mat-icon>people</mat-icon>Contacts</a
-  >
-  <a mat-button routerLink="/newcontact" class="top-menu-item"
-    ><mat-icon>person_add</mat-icon>New Contact</a
-  > -->
+  <a mat-button routerLink="/news/topstories.json" class="top-menu-item">Top Stories</a>
+  <a mat-button routerLink="/news/newstories.json" class="top-menu-item">New Stories</a>
+  <a mat-button routerLink="/news/beststories.json" class="top-menu-item">Best Stories</a>
+  <a mat-button routerLink="/news/askstories.json" class="top-menu-item">Ask Stories</a>
+  <a mat-button routerLink="/news/showstories.json" class="top-menu-item">Show Stories</a>
+  <a mat-button routerLink="/news/jobstories.json" class="top-menu-item">Job Stories</a>
+
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="60" mode="side">
+  <mat-sidenav
+    #sidenav
+    [fixedInViewport]="true"
+    [fixedTopGap]="60"
+    mode="over"
+    (opened)="overlay = true"
+    (closed)="overlay = false"
+  >
     <div class="side-nav-items">
       <div>
         <a
@@ -91,4 +94,12 @@
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
+  <div
+    class="overlay"
+    *ngIf="overlay"
+    (click)="sidenav.close()"
+    (keydown.enter)="sidenav.toggle()"
+    (keydown.space)="sidenav.toggle()"
+    tabindex="0"
+  ></div>
 </mat-sidenav-container>
