@@ -5,27 +5,52 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrl: './news.component.scss'
+  styleUrl: './news.component.scss',
 })
 export class NewsComponent implements OnInit {
+  apiType = 'newstories';
+  title = 'New Stories';
 
-  prova='newstories.json';
-  apiType!:string;
-
-  constructor(private route: ActivatedRoute,
-    private api:ApiService){}
+  constructor(
+    private route: ActivatedRoute,
+    private api: ApiService,
+  ) {}
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.apiType = params.get('apiType') ?? this.apiType;
+      this.setSectionTitle(this.apiType);
+      this.fetchApi(this.apiType)
 
-    this.route.params.subscribe(params => {
-      this.apiType = params['apiType'];
-      console.log(this.apiType)
-    })
-
-
-    this.api.getNumericIdArray(this.prova).subscribe((arr:number[])=>{
-      console.log(arr);
-    })
-    
+    });
   }
 
+  setSectionTitle(apiType:string) {
+    switch (apiType) {
+      case 'newstories':
+        this.title = 'New Stories';
+        break;
+      case 'topstories':
+        this.title = 'Top Stories';
+        break;
+      case 'beststories':
+        this.title = 'Best Stories';
+        break;
+      case 'askstories':
+        this.title = 'Ask Stories';
+        break;
+      case 'showstories':
+        this.title = 'Show Stories';
+        break;
+      case 'jobstories':
+        this.title = 'Job Stories';
+        break;
+    }
+  }
+
+  fetchApi(apiType:string){
+    this.api.getNumericIdArray(apiType).subscribe((arr: number[]) => {
+      console.log(arr);
+    });
+  }
+  
 }

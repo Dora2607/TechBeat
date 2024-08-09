@@ -13,6 +13,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   getNumericIdArray(apiType: string): Observable<number[]> {
-    return this.httpClient.get<number[]>(`${URL}/${apiType}`);
+    return this.httpClient.get<number[]>(`${URL}/${apiType}.json`);
   }
 }

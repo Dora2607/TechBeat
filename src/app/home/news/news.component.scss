@@ -8,7 +8,7 @@
   margin-top: 3rem;
 
   
-  h2 {
+  .sectionTitle {
     text-align: left;
     margin-top: 1.5rem;
     color: $btn-color;
@@ -37,14 +37,14 @@
 
 @media (min-width: 900px) {
   .cardsContainer,
-  h2 {
+  .sectionTitle {
     width: 70%;
   }
 }
 
 @media (max-width: 900px) {
   .cardsContainer,
-  h2 {
+  .sectionTitle {
     min-width: 300px;
     max-width: 430px;
     width: 90%;
