@@ -1,16 +1,16 @@
 <div class="newsContainer">
   <h2 class="sectionTitle">{{title}}</h2>
 
-  <mat-card class="cardsContainer" appearance="outlined">
+  <mat-card class="cardsContainer" appearance="outlined" *ngFor="let news of displayedNews">
     <mat-card-header>
-      <mat-card-title> Australian Shepherd</mat-card-title>
-      <mat-card-subtitle>Herding group</mat-card-subtitle>
+      <mat-card-title class="cardTitle">{{news.title}}</mat-card-title>
+      <mat-card-subtitle class="cardSubtitle">by: {{news.by}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions class="actionContainer">
       <span class="postDate"
-        ><mat-icon class="clock">query_builder</mat-icon>Out 27, 2019</span
+        ><mat-icon class="clock">query_builder</mat-icon>{{news.time | date : "h:mm:ss" }}</span
       >
-      <button mat-button>Read More</button>
+      <a mat-button href="{{news.url}}" target="_blank">Read More</a>
     </mat-card-actions>
   </mat-card>
 </div>

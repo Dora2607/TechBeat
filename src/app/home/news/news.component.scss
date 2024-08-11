@@ -7,7 +7,6 @@
   width: 100%;
   margin-top: 3rem;
 
-  
   .sectionTitle {
     text-align: left;
     margin-top: 1.5rem;
@@ -19,6 +18,13 @@
     border: 0;
     border-radius: 0;
     border-bottom: 2.5px solid $toolbar-color;
+    .cardTitle {
+      font-weight: 500;
+    }
+    .cardSubtitle {
+      padding-top: 0.5rem;
+      padding-left: 0.35rem;
+    }
     .actionContainer {
       display: flex;
       justify-content: flex-end;
