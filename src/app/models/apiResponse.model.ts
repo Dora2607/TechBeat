@@ -4,7 +4,7 @@ export interface ApiResponse {
   id: number;
   kids: number[];
   score: number;
-  time: Date;
+  time: number;
   title: string;
   type: string;
   url: string;

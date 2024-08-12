@@ -8,9 +8,10 @@
     </mat-card-header>
     <mat-card-actions class="actionContainer">
       <span class="postDate"
-        ><mat-icon class="clock">query_builder</mat-icon>{{news.time | date : "h:mm:ss" }}</span
+        ><mat-icon class="clock">query_builder</mat-icon>{{(news.time * 1000) | date:'medium' }}</span
       >
       <a mat-button href="{{news.url}}" target="_blank">Read More</a>
     </mat-card-actions>
   </mat-card>
+  <button mat-flat-button class="btn" (click)="loadMoreNews()">Load More</button>
 </div>

@@ -20,6 +20,11 @@
 }
 
 .mat-toolbar {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 500;
   height: 60px;
   background-color: $toolbar-color;
   display: flex;
@@ -34,7 +39,7 @@
 }
 
 .mat-sidenav {
-  background-color:$sidenav-color;
+  background-color: $sidenav-color;
   width: 50%;
   border-radius: 0;
   z-index: 3;
