@@ -9,7 +9,7 @@
 
   .sectionTitle {
     text-align: left;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     color: $btn-color;
   }
 
@@ -41,6 +41,13 @@
   }
   .btn{
     margin-top: 2rem;
+  }
+  h3{
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: $btn-color;
   }
 }
 

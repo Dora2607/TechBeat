@@ -3,17 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiResponse } from '../../models/apiResponse.model';
 import { NewsService } from '../../services/news.service';
 import { Subject, takeUntil } from 'rxjs';
+import { animation1 } from '../../shared/animations/animation1'
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
+  animations: [animation1]
 })
 export class NewsComponent implements OnInit, OnDestroy {
   apiType = 'newstories';
   title = 'New Stories';
   displayedNews: ApiResponse[] = [];
   private destroy$ = new Subject<void>();
+  fineArray = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +37,12 @@ export class NewsComponent implements OnInit, OnDestroy {
       .subscribe((news) => {
         this.displayedNews = news;
       });
+    
+    this.newsService.setFineArraay().pipe(takeUntil(this.destroy$))
+      .subscribe((bool)=>{
+        this.fineArray = bool;
+      })
+   
   }
 
   setSectionTitle(apiType: string) {

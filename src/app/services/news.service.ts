@@ -11,6 +11,7 @@ export class NewsService {
   private newsIdSubject = new BehaviorSubject<number[]>([]);
   private displayNewsSubject = new BehaviorSubject<ApiResponse[]>([]);
   private newIndex = 0;
+  private fineArraySubject = new BehaviorSubject<boolean>(false);
 
   constructor(private api: ApiService) {}
 
@@ -29,19 +30,30 @@ export class NewsService {
   getNews() {
     const arr = this.newsIdSubject.value;
     const newsToDisplay = arr.slice(this.newIndex, this.newIndex + 10);
-    newsToDisplay.forEach((id) => {
-      this.api.getResponseApi(id).subscribe((news) => {
-        this.displayNewsSubject.next([...this.displayNewsSubject.value, news]);
+    if (
+      newsToDisplay.length === 10 ||
+      (newsToDisplay.length > 0 && newsToDisplay.length < 10)
+    ) {
+      newsToDisplay.forEach((id) => {
+        this.api.getResponseApi(id).subscribe((news) => {
+          this.displayNewsSubject.next([
+            ...this.displayNewsSubject.value,
+            news,
+          ]);
+        });
       });
-    });
-    this.newIndex += 10;
-    if (arr.length<=this.newIndex){
-      console.log('non ci sono altre notizie');
-    } // da implementare meglio
+      this.newIndex += 10;
+    } else {
+      this.fineArraySubject.next(true);
+    }
   }
 
   getDisplayedNews(): Observable<ApiResponse[]> {
     return this.displayNewsSubject.asObservable();
+  }
+
+  setFineArraay(): Observable<boolean> {
+    return this.fineArraySubject.asObservable();
   }
 
   resetNews() {
