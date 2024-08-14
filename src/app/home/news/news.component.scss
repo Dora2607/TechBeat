@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 5rem;
 
   .sectionTitle {
     text-align: left;
@@ -23,11 +23,11 @@
     }
     .cardSubtitle {
       padding-top: 0.5rem;
-      padding-left: 0.35rem;
+      
     }
     .actionContainer {
       display: flex;
-      justify-content: flex-end;
+      padding-top: 1rem;
       .postDate {
         display: flex;
         font-size: 12px;
@@ -56,6 +56,10 @@
   .sectionTitle {
     width: 70%;
   }
+  .actionContainer{
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
 
 @media (max-width: 900px) {
@@ -65,4 +69,12 @@
     max-width: 430px;
     width: 90%;
   }
+  .actionContainer{
+    flex-direction: column;
+    align-items: baseline;
+    a{
+      align-self: flex-end;
+    }
+  }
 }
+

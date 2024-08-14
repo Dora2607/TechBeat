@@ -34,8 +34,8 @@ export class AppComponent implements OnInit {
         content:
           'techBeat is an application that allows you to view the latest available news on various topics.',
       },
-      { property: 'og:image', content: 'URL of the Open Graph image' },
-      { property: 'og:url', content: 'URL of your page' },
+      { property: 'og:image', content: 'https://opengraph.b-cdn.net/production/images/fcf43e32-dfed-4061-833a-0262c57cf457.png?token=UoNqqdRXOU7_sfd6cmXp8Yyf6dMlbyZfHcKYV9nt9p0&height=602&width=1200&expires=33259656735' },
+      { property: 'og:url', content: 'https://techbeat-edadf.web.app' },
     ]);
   }
 }

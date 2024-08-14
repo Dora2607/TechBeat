@@ -58,6 +58,7 @@ export class NewsService {
 
   resetNews() {
     this.newIndex = 0;
+    this.fineArraySubject.next(false);
     this.displayNewsSubject.next([]);
   }
 }
