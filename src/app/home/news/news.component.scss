@@ -23,7 +23,6 @@
     }
     .cardSubtitle {
       padding-top: 0.5rem;
-      
     }
     .actionContainer {
       display: flex;
@@ -39,10 +38,10 @@
       }
     }
   }
-  .btn{
+  .btn {
     margin-top: 2rem;
   }
-  h3{
+  h3 {
     width: 100%;
     text-align: center;
     padding-top: 2rem;
@@ -56,7 +55,7 @@
   .sectionTitle {
     width: 70%;
   }
-  .actionContainer{
+  .actionContainer {
     flex-direction: row;
     justify-content: flex-end;
   }
@@ -69,12 +68,11 @@
     max-width: 430px;
     width: 90%;
   }
-  .actionContainer{
+  .actionContainer {
     flex-direction: column;
     align-items: baseline;
-    a{
+    a {
       align-self: flex-end;
     }
   }
 }
-

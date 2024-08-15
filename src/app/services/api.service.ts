@@ -5,7 +5,6 @@ import { ApiResponse } from '../models/apiResponse.model';
 
 const URL = 'https://hacker-news.firebaseio.com/v0';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -18,8 +17,7 @@ export class ApiService {
     return this.httpClient.get<number[]>(`${URL}/${apiType}.json`);
   }
 
-  getResponseApi(id:number):Observable<ApiResponse>{
-   return this.httpClient.get<ApiResponse>(`${URL}/item/${id}.json`)
+  getResponseApi(id: number): Observable<ApiResponse> {
+    return this.httpClient.get<ApiResponse>(`${URL}/item/${id}.json`);
   }
-
 }

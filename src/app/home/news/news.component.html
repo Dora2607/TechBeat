@@ -1,19 +1,33 @@
 <div class="newsContainer">
-  <h2 class="sectionTitle">{{title}}</h2>
+  <h2 class="sectionTitle">{{ title }}</h2>
 
-  <mat-card class="cardsContainer" appearance="outlined" *ngFor="let news of displayedNews"[@animation1]>
+  <mat-card
+    class="cardsContainer"
+    appearance="outlined"
+    *ngFor="let news of displayedNews"
+    [@animation1]
+  >
     <mat-card-header>
-      <mat-card-title class="cardTitle">{{news.title}}</mat-card-title>
-      <mat-card-subtitle class="cardSubtitle">by: {{news.by}}</mat-card-subtitle>
+      <mat-card-title class="cardTitle">{{ news.title }}</mat-card-title>
+      <mat-card-subtitle class="cardSubtitle"
+        >by: {{ news.by }}</mat-card-subtitle
+      >
     </mat-card-header>
     <mat-card-actions class="actionContainer">
       <span class="postDate"
-        ><mat-icon class="clock">query_builder</mat-icon>{{(news.time * 1000) | date:'medium' }}</span
+        ><mat-icon class="clock">query_builder</mat-icon
+        >{{ news.time * 1000 | date: "medium" }}</span
       >
-      <a mat-button href="{{news.url}}" target="_blank">Read More</a>
+      <a mat-button href="{{ news.url }}" target="_blank">Read More</a>
     </mat-card-actions>
   </mat-card>
-  <button *ngIf="!fineArray" mat-flat-button class="btn" (click)="loadMoreNews()">Load More</button>
+  <button
+    *ngIf="!fineArray"
+    mat-flat-button
+    class="btn"
+    (click)="loadMoreNews()"
+  >
+    Load More
+  </button>
   <h3 *ngIf="fineArray">There is no further news</h3>
 </div>
-

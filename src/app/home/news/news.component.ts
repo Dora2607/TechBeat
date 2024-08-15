@@ -3,13 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiResponse } from '../../models/apiResponse.model';
 import { NewsService } from '../../services/news.service';
 import { Subject, takeUntil } from 'rxjs';
-import { animation1 } from '../../shared/animations/animation1'
+import { animation1 } from '../../shared/animations/animation1';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
-  animations: [animation1]
+  animations: [animation1],
 })
 export class NewsComponent implements OnInit, OnDestroy {
   apiType = 'newstories';
@@ -29,20 +29,21 @@ export class NewsComponent implements OnInit, OnDestroy {
       this.setSectionTitle(this.apiType);
       this.newsService.setApyType(this.apiType);
       this.newsService.fetchApi(this.apiType);
-
     });
 
     this.newsService
-      .getDisplayedNews().pipe(takeUntil(this.destroy$))
+      .getDisplayedNews()
+      .pipe(takeUntil(this.destroy$))
       .subscribe((news) => {
         this.displayedNews = news;
       });
-    
-    this.newsService.setFineArraay().pipe(takeUntil(this.destroy$))
-      .subscribe((bool)=>{
+
+    this.newsService
+      .setFineArraay()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((bool) => {
         this.fineArray = bool;
-      })
-   
+      });
   }
 
   setSectionTitle(apiType: string) {
@@ -66,12 +67,12 @@ export class NewsComponent implements OnInit, OnDestroy {
         this.title = 'Job Stories';
         break;
     }
-  } 
-
-  loadMoreNews(){
-   this.newsService.getNews();
   }
-  
+
+  loadMoreNews() {
+    this.newsService.getNews();
+  }
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
