@@ -8,12 +8,12 @@ TechBeat è un'applicazione basata su Angular progettata per democratizzare la d
  Schermata iniziale: Questa immagine mostra la schermata iniziale dell’applicazione.
 ![Demo2](/img-readme/demo%202.png)
  Gli utenti possono cliccare su uno dei topic per visualizzare le notizie corrispondenti.
-![Demo3](/img-readme/demo%203.png)
+![Demo3](/img-readme/Demo%203.png)
  Cliccando su questo pulsante, gli utenti possono caricare e leggere altre notizie, permettendo di visualizzare più articoli oltre ai primi 10 inizialmente mostrati.
 
 ## Links
 
-[TechBest](https://techbeat-edadf.web.app): per provare l'applicazione.
+[TechBeat](https://techbeat-edadf.web.app): per provare l'applicazione.
 
 
 ## Prerequisiti
