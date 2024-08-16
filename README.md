@@ -83,16 +83,19 @@ La struttura del progetto è la seguente:
   - **Animations**: Il file TypeScript per le animazioni da applicare alle componenti.
   - **Material**: Il modulo che contiene tutte le API di Angular Material utilizzate nell'applicazione.
 
-- **Services**: Questo modulo contiene i servizi utilizzati per l'applicazione.
-
-  - **API Service**: Il servizio che gestisce le chiamate API per recuperare i dati.
-  - **News Service**: Il servizio che gestisce le chiamate API specifiche per le notizie.
 
 - **Home**: Questo modulo contiene la componente principale per la visualizzazione delle notizie.
 
   - **News Component**: La componente che visualizza le notizie recuperate dalle API.
 
-- **Models**: Questo modulo contiene le interfacce per modellare le risposte delle chiamate API.
+Inoltre, il progetto include due directory principali:
+
+- **Services**: Questa directory contiene i servizi utilizzati per l'applicazione.
+
+  - **API Service**: Il servizio che gestisce le chiamate API per recuperare i dati.
+  - **News Service**: Il servizio che gestisce le notizie e l'interazione con `ApiService` per recuperare e visualizzare le notizie
+
+- **Models**: Questa directory contiene le interfacce per modellare le risposte delle chiamate API.
   - **API Response Model**: L'interfaccia che definisce la struttura dei dati ricevuti dalle chiamate API.
 
 ### Servizi
